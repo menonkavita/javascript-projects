@@ -35,6 +35,27 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //d). Decide where to best place your function call to gather our new fuel.
 
+let nonSuspiciousFunction = function(a) {
+
+    if (checkFuel(a) === 'green') {
+      fuelLevel = fuelLevel - a;
+      // return a - 100001;     // levels of fuel - 100,000 or 50,000
+      return a - 100000;
+    }
+    else if (checkFuel(a) === 'yellow') {
+      fuelLevel = fuelLevel - a;
+      //return a - 50001;
+      return a - 50000;
+    }
+    else {
+      fuelLevel = fuelLevel - a;
+      return a;
+    }
+  };
+
+
+
+
 /* Next, liberate some of that glorious cargo.
  */
 
@@ -44,13 +65,60 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //c). The cargo hold has better security than the fuel tanks. It counts how many things are in storage. You need to replace what you steal with something worthless. The count MUST stay the same, or you’ll get caught and thrown into the LaunchCode brig.
 
+let cleverArr = [];
+
+let invisibleFunction = function(stealCargo) {
+
+   // Stealing 2 items in the Cargo Hold
+      for(i=0; i < cargoHold.length; i++){
+
+        if (!(cargoHold[i].toLowerCase == "water")){
+            cleverArr.push(cargoHold[i])
+            cargoHold[i] = "Got You!!"
+        } 
+
+        if (cleverArr.length > 1){
+          return cleverArr;
+        }
+      }
+};
+
+
 //d). Don’t get hasty, matey! Remember to test your function.
 
 /* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
  */
  
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
+    
+    let fuelToRaid = 150000;
+
+    let irs = function(levelOfFuel, itemsInCargo) {
+    //let arr = deckMops(itemsInCargo);
+    let arr = invisibleFunction(itemsInCargo);
+    let fuelRaided = nonSuspiciousFunction(fuelToRaid)
+  
+   return arr
+  }
+ 
+  let cargoToRaidArr = irs(fuelToRaid, 2)
+  
 	
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+
+console.log(`\nRaided ${fuelToRaid} kg of fuel from the tanks, and stole ${cargoToRaidArr[0]} and ${cargoToRaidArr[1]} from the cargo hold.\n`)
+
+console.log("Fuel remaining: " + fuelLevel)
+console.log("Fuel level: " + checkFuel(fuelLevel) + "\n");
+
+console.log("Hold Items in Cargo: " + cargoHold)
+console.log("Hold status: " + holdStatus(cargoHold));
+
+
+
+
+
+
+
