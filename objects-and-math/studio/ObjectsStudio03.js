@@ -101,8 +101,8 @@ let candidateA = {
    'astronautID':890
  };
  
- // let crew = [candidateB,candidateD,candidateF];
- let crew = [candidateA,candidateC,candidateE];
+  let crew = [candidateB,candidateD,candidateF];
+ //let crew = [candidateA,candidateC,candidateE];
 
  fuelRequired(crew);
 

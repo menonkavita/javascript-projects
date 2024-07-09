@@ -33,11 +33,11 @@ function missionDuration(numOrbits, orbRadius = 2000, orbSpeed = 28000){
 // time = distance/speed                                                            
 
   let timeToCompleteOrbit = 0;
-  timeToCompleteOrbit = orbitCircumference(orbRadius) * orbSpeed;
+  timeToCompleteOrbit = Math.round((orbitCircumference(orbRadius) / orbSpeed) * 100) / 100 ;
   
-  console.log(`\nThe mission will travel ${orbitCircumference(orbRadius)} km around the planet, and it will take ${timeToCompleteOrbit} hours to complete.`)
+  console.log(`\nThe mission will travel ${orbitCircumference(orbRadius)} km around the planet, and it will take ${timeToCompleteOrbit * numOrbits} hours to complete.`)
 
-  return timeToCompleteOrbit;
+  return timeToCompleteOrbit * numOrbits;
 }
 
 
@@ -146,8 +146,8 @@ let candidateA = {
    'astronautID':890
  };
  
- let crew = [candidateA,candidateC,candidateE];
- // let crew = [candidateB,candidateD,candidateF];
+ //let crew = [candidateA,candidateC,candidateE];
+  let crew = [candidateB,candidateD,candidateF];
  
  // console.log(missionDuration(5));
  

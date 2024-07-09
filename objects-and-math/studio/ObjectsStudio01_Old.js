@@ -1,42 +1,60 @@
 // Code your selectRandomEntry function here:
 
 function selectRandomEntry(arrID){
-    
-  let randNum = Math.floor(Math.random() * arrID.length);
-  console.log("Random Number generated is ", randNum);
 
-  return randNum;
-}
-
-function threeUniqueIDs(arrayID){
   let shortlistedArr = [];
-  //let numRandom = selectRandomEntry(arrayID);
-  //shortlistedArr.push(arrayID[numRandom]); 
 
-  for(let i = 0; shortlistedArr.length < 3 ; i++){
-          let numRandom = selectRandomEntry(arrayID);
-         
-          if (!(shortlistedArr.includes(arrayID[numRandom]))){
-                  shortlistedArr.push(arrayID[numRandom]); 
-          }
-          
-  } 
+  for(let i = 0; i < 3; i++){
+    
+    let randNum = Math.floor(Math.random() * arrID.length);
+    // console.log("2. Random Number ", randNum);
+
+    shortlistedArr.push(arrID[randNum]);
+    // console.log("3. shortlistedArr", shortlistedArr, "\n");
+
+    if (shortlistedArr.includes(arrID[randNum])){
+      let j = 0; 
+      let counter = 0;
+
+      while (j < shortlistedArr.length){
+        if (shortlistedArr[j] === arrID[randNum]){
+          counter++;
+        }
+
+        if (counter > 1){
+          shortlistedArr.splice(j, 1)
+          i--;
+        }
+
+        j++;
+      }
+    }
+  } // end of for
   return shortlistedArr;
 }
+
 
 // Code your buildCrewArray function here:
 
 function buildCrewArray(IDArr, candidatesArr){
-let crewArr = [];
+  let crewArr = [];
+  
+    for(let i = 0; i < IDArr.length; i++){
 
-  for(let i = 0; i < candidatesArr.length; i++){
-      if(IDArr.includes(candidatesArr[i].astronautID)){
-          crewArr.push(candidatesArr[i].name);
+      for(let j = 0; j < candidatesArr.length; j++){
+        
+        if (IDArr[i] === candidatesArr[j].astronautID){
+          
+          crewArr.push(candidatesArr[j].name)
+          //console.log("--- 2. Inside if - matching ID found. ---", IDArr[i], candidatesArr[j].astronautID, crewArr)
+        }
       }
 
-  }
-return crewArr;
+    }
+
+  return crewArr;
 }
+
 
 let idNumbers = [291, 414, 503, 599, 796, 890];
 
@@ -89,7 +107,7 @@ let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF
 
 // Code your template literal and console.log statements:
 
-let randIDNumbers = threeUniqueIDs(idNumbers);
+let randIDNumbers = selectRandomEntry(idNumbers);
 console.log("\nLucky Astronauts who get to go on the Space mission have IDs ", randIDNumbers, "\n")
 
 
