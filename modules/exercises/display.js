@@ -34,3 +34,8 @@ function printTestScores(index,test,students,scores){
   }
   return;
 }
+
+
+module.exports = {
+  printAll : printAll
+}
