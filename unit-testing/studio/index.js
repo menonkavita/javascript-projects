@@ -48,6 +48,7 @@ let launchcode = {
   }
 }
 
+/*
 console.log("launchcode.organization", launchcode.organization)
 console.log('launchcode["executiveDirector"]', launchcode["executiveDirector"])
 console.log('launchcode["percentageCoolEmployees"]', launchcode["percentageCoolEmployees"])
@@ -66,7 +67,7 @@ console.log("launchcode.launchOutput(30)", launchcode.launchOutput(30))
 console.log("launchcode.launchOutput(17)", launchcode.launchOutput(17))
 console.log("launchcode.launchOutput(31)", launchcode.launchOutput(31))
 console.log("launchcode.launchOutput(49)", launchcode.launchOutput(49))
-
+*/
 
 
 module.exports = launchcode;
