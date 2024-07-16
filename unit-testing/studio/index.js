@@ -33,7 +33,7 @@ let launchcode = {
 
     // 6. When passed a number that is divisible by 2 AND 5, return 'Launch Rocks!'
     if((numValue % 2 === 0) && (numValue % 5 === 0) && (numValue % 3 !== 0)){
-      return 'Launch Rocks!';
+      return 'Launch Rocks! (CRASH!!!!)';
     }
 
     // 7. When passed a number that is divisible by 2, 3, AND 5, return 'LaunchCode Rocks!'

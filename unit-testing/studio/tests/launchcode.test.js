@@ -86,9 +86,11 @@ test("test 9: should return 'Code Rocks!' when passed a number that is divisible
 
 
 // 6. When passed a number that is divisible by ONLY 2 AND 5, return 'Launch Rocks!'
+// Edit: For the case where a number is divisible by both 2 and 5, instead of returning 
+// 'Launch Rocks!', we want the function to return 'Launch Rocks! (CRASH!!!!)'.
 test("test 10: should return 'Launch Rocks!' when passed a number that is divisible by 2 AND 5", () => {
   let output = launchcode.launchOutput(10);
-  expect(output).toBe('Launch Rocks!');
+  expect(output).toBe('Launch Rocks! (CRASH!!!!)');
 });
 
 
