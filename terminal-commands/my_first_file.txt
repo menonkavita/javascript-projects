@@ -1,0 +1,29 @@
+
+// Chapter 19 - Terminal
+
+Absolute path -  The absolute path is the path to a file from the root directory. 
+
+Relative path - The relative path is the path to a file from the current directory.
+
+
+pwd // print working directory - gives path of the current working directory
+
+touch my_first_file.txt // 'touch' command creates a file 
+
+
+//Print the contents of the file to standard out with the cat command.
+cat my_first_file.txt                   // Prints the contents of the file to terminal.
+
+
+cp my_first_file.txt ../my_first_copy.txt  // make a copy of the txt file.
+
+mv my_first_copy.txt my_first_directory/    // move file into folder ‘my_first_directory’
+mv my_first_copy.txt Ch_19_Terminal         // eg. of moving file 
+
+rm -r <directory>                           // removes directory
+
+
+
+
+
+
