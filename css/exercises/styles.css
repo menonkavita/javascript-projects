@@ -1,1 +1,28 @@
 /* Start adding your styling below! */ 
+
+body{
+    background-color: yellow;
+  }
+
+  p{
+    color: green;
+  }
+
+.center{
+    text-align: center;
+}
+
+li {
+    text-align: center;
+}
+#cool-text{
+    color: blue;
+
+}
+#list-color{
+    color:blueviolet;
+}
+
+
+
+
