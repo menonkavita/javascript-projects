@@ -6,33 +6,40 @@
 			console.log("Hello from script...");
 
 			let userEngine = document.querySelector('input[name="engine"]:checked');
-			console.log("Search engine selected by user: ", userEngine.value);
-
 
 			let actions = {
-				"google": "https://www.google.com/",
-				"bing": "https://www.bing.com/",
-				"duckDuckGo" : "https://duckduckgo.com/",
-				"ask" : "https://www.ask.com/"
+				"google": "https://www.google.com/search?q=",
+				"bing": "https://www.bing.com/search?q=",
+				"duckDuckGo" : "https://duckduckgo.com/?q=",
+				"ask" : "https://www.ask.com/web?q=",
 			};
 
 			let actionURL = actions[userEngine.value];
+
 			console.log("actionURL", actionURL);
+			console.log("Search engine selected by user: ", userEngine.value);
+
+			let form1 = document.getElementById("searchForm");
+			let userText = document.querySelector("q");
+			actionURL = actionURL + userText.value;
+			console.log("actionURL", actionURL);
+			form1.setAttribute('action', actionURL);
+						
 		};
 
 		// TODO: create a handler
 		window.addEventListener("load", function () {
 			// TODO: register the handler
-			let form = document.querySelector("searchForm");
-			searchForm.addEventListener("submit", setSearchEngine())
+			console.log("Window Load...");
+			let form = document.getElementById("searchForm");
+			form.addEventListener("submit", setSearchEngine);
 			
-			//searchForm.setAttribute("action");
 		});
 	</script>
 </head>
 
 <body>
-	<form id="searchForm" method="POST" action="">
+	<form id="searchForm" method="POST">
 		<!-- TODO: add form elements -->
 
 		<!-- Textbox -->
