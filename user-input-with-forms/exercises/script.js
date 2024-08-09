@@ -10,11 +10,12 @@
       let date = document.querySelector("input[name=testDate]");
 
       let type = document.querySelector("#rocketType");
+      //let type = document.querySelector("input[name=rocketType]");
         
       
       let number = document.querySelector("input[name=boosterCount]");
-      let rating = document.querySelector("radio[name=windRating]");
-      let servers = document.querySelector("checkbox[name=productionServers]");
+      let rating = document.querySelector("input[name=windRating]");
+      let servers = document.querySelector("input[name=productionServers]");
 
       if (name.value === "" || date.value === "" || type.value === "" ||
         number.value === "" || rating.value === "" || servers.value === "") {
