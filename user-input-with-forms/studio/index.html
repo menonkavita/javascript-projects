@@ -20,7 +20,8 @@
 			console.log("Search engine selected by user: ", userEngine.value);
 
 			let form1 = document.getElementById("searchForm");
-			let userText = document.querySelector("q");
+			let userText = document.querySelector("[name='q']");
+			
 			actionURL = actionURL + userText.value;
 			console.log("actionURL", actionURL);
 			form1.setAttribute('action', actionURL);
@@ -39,7 +40,7 @@
 </head>
 
 <body>
-	<form id="searchForm" method="POST">
+	<form id="searchForm" method="GET">
 		<!-- TODO: add form elements -->
 
 		<!-- Textbox -->
