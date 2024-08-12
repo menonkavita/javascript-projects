@@ -47,7 +47,7 @@ function init() {
 
             const buttonSortAsc = document.getElementById("astronautsSortAsc");
             buttonSortAsc.addEventListener("click", event => {
-                console.log("Button clicked - Descending");
+                console.log("Button clicked - Ascending");
                 json.sort((a, b) => (a.hoursInSpace > b.hoursInSpace ? 1 : -1));
                 console.log(json);
                 printAstronauts(json);
