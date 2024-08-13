@@ -7,6 +7,9 @@ function printAstronauts(astronautsArr) {
     container.innerHTML = "";
 
     for (let i = 0; i < astronautsArr.length; i++) {
+
+        let statusActive = astronautsArr[i].active ? "textGreen" : "";
+
         container.innerHTML = container.innerHTML +
             // HTML Template
             `<div class="astronaut">                      
@@ -14,8 +17,9 @@ function printAstronauts(astronautsArr) {
             <h3>${astronautsArr[i].firstName} ${astronautsArr[i].lastName}</h3>
             <ul>
                 <li>Hours in space: ${astronautsArr[i].hoursInSpace} </li>
-                <li>Active: ${astronautsArr[i].active} </li>
-                <li>Skills: ${astronautsArr[i].skills} </li>
+                <li class = "${statusActive}">Active: ${astronautsArr[i].active} </li>
+
+                <li>Skills: ${astronautsArr[i].skills.join(", ")} </li>
             </ul>
         </div>
         <img class="avatar" src="${astronautsArr[i].picture}"> </img>
