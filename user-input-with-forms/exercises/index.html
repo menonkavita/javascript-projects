@@ -39,13 +39,15 @@
     <label> Number of Rocket Boosters <input type="number" name="boosterCount" min="0" max="10" /></label>
 
     <!-- Radio -->
+    <!-- 'required' after value forces user to pick one of the radio buttons -->
     Wind Rating
-    <label>No Wind<input type="radio" name="windRating" value="0" /></label>
-    <label>Mild<input type="radio" name="windRating" value="10" /></label>
-    <label>Strong<input type="radio" name="windRating" value="20" /></label>
+    <label>No Wind<input type="radio" name="windRating" value="0" required/></label>
+    <label>Mild<input type="radio" name="windRating" value="10" required/></label>
+    <label>Strong<input type="radio" name="windRating" value="20" required/></label>
 
     <!-- CheckBox -->
-    <label>Use production grade servers<input type="checkbox" name="productionServers" /></label>
+    <!-- Default value of CheckBox is 'on' -->
+    <label>Use production grade servers<input type="checkbox" name="productionServers"/></label>
     <button> Run Simulation </button>
   </form>
 
